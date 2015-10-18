@@ -1,5 +1,5 @@
-Complex.o
-complexTester.o
-COS221HW6.exe
-COS221HW6.layout
-Makefile.win
+*.o
+*.win
+*.exe
+*.layout
+*!.
