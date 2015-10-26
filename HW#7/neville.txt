@@ -1,0 +1,11 @@
+100NV   100     Lec
+101NV   200     Lec
+106NV   24      Lab PC
+107NV   15      Lab Mac
+110NV   18      Lec
+112NV   24      Lec
+118NV   16      Lab PC
+120NV   20      Lec
+206NV   24      Lec
+208NV   70      Lec
+212NV   40      Lec

@@ -1,0 +1,11 @@
+COS125  75      Lec
+COS220  115     Lec
+ENG101  32      Lec
+ENG105  18      Lec
+MAT126  30      Lec
+MAT231  12      Lab PC
+ENG240  18      Lec
+MAT400  12      Lab Mac
+MAT401  18      Lab PC
+COS331  45      Lec
+COS420  20      Lec
