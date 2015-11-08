@@ -1,0 +1,18 @@
+Car with license EARLYBIRD parked at 6:30
+Car with license WORKER parked at 7:00
+Car with license CEO parked at 7:30
+Car with license CLERK parked at 7:30
+Car with license MANAGER parked at 8:00
+Car with license VP turned away at 9:00 - LOT IS FULL
+Car with license CLERK left at 9:30 paying $16.00
+Car with license SHOPPER parked at 10:00
+Car with license CEO left at 10:00 paying $24.00
+Car with license EARLYBIRD left at 10:30 paying $32.00
+Car with license WORKER left at 11:00 paying $32.00
+Car with license JANITOR parked at 11:00
+Car with license MANAGER left at 11:30 paying $32.00
+Cars remaining in the lot include: JANITOR SHOPPER 
+The sum of charges is $136.00
+The sum of meter charges is $2.50
+
+Code written by Scott Edgerly

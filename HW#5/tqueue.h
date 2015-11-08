@@ -17,9 +17,6 @@ public:
 									// POST: return copy of front item
 	void dequeue( );				// PRE: queue is not empty	
 									// POST: item at front of queue is removed
-	void push(T item);				// PRE: queue is not full
-									// POST: pushes item onto queue (acts as a stack)
-	void pop();						// PRE: queue is not empty
 									// POST: points to the previous element in queue (acts as a stack)
 	T top();						// POST: returns the top of the stack
 
@@ -113,27 +110,3 @@ template <class T>
 int Queue<T>::count( ) const
 // POST:	return number of elements in queue
 {	return size;	}
-
-template <class T>
-void Queue<T>::push(T item)
-// PRE: queue is not full
-// POST: pushes item onto queue (acts as a stack)
-{
-	queue[size] = item;
-	size++;	
-}
-
-template <class T>
-void Queue<T>::pop()
-// PRE: queue is not empty
-// POST: points to the previous element in queue (acts as a stack)
-{
-	size--;
-}
-
-template <class T>
-T Queue<T>::top()
-// POST: returns the top of the stack
-{
-	return queue[size-1];
-}

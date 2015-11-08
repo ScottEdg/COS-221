@@ -10,6 +10,7 @@ The code also tells the user when cars arrived and departed and sums up the char
 #include <fstream>
 #include <sstream>
 #include <iomanip>
+#include <stack>
 using namespace std;
 struct vehicle_data{
 	string license; //license of car
@@ -21,7 +22,7 @@ int main()
 	vehicle_data vehicle;
 	string dir; //direction
 	string time; //used to print formated time
-	Queue <vehicle_data> alley;
+	stack <vehicle_data> alley;
 	Queue <vehicle_data> street;
 	ifstream fin; //used to get data for lot.txt
 	ofstream fout; //sends out to log.txt
@@ -36,7 +37,7 @@ int main()
 	do{
 		fin>>dir>>vehicle.license>>vehicle.time; //grab all the data from one line
 
-		if(dir == "A" && !alley.full()){  //put car in alley if there is space
+		if(dir == "A" && alley.size() < 5){  //put car in alley if there is space
 			street.enqueue(vehicle); //place car in queue for the street
 			alley.push(street.getFront()); //place car in alley
 			ss<<alley.top().time; //take time car entered alley
@@ -46,7 +47,7 @@ int main()
 			street.dequeue(); //remove the "extra copy" of the car from the street
 		}
 	
-		else if(dir == "A" && alley.full()){ //if the alley is full
+		else if(dir == "A" && alley.size() == 5){ //if the alley is full
 			street.enqueue(vehicle); //same as before
 			ss<<street.getFront().time; //take in time car attempted to enter alley
 			ss>>time; //cast it as a string
@@ -57,7 +58,7 @@ int main()
 		}
 	
 		else if(dir == "D"){ //if a car in the alley is leaving
-			max = alley.count(); //alley.count() changes when we pop, thus a temp val is used
+			max = alley.size(); //alley.count() changes when we pop, thus a temp val is used
 			for(i=0; i<max;i++){
 	
 				if(vehicle.license == alley.top().license){ //the car that is leaving
@@ -76,7 +77,7 @@ int main()
 				else{ //keep looking for the car that is leaving
 					street.enqueue(alley.top()); //place in the street
 					alley.pop(); //remove from alley
-					sum_of_meter = sum_of_meter - 0.25;
+					sum_of_meter = sum_of_meter + 0.25;
 				}
 			}
 			
@@ -90,7 +91,7 @@ int main()
 	}while(!fin.fail()); //keep going until we reach an error or EoF
 
 	fout<<"Cars remaining in the lot include: ";
-	max = alley.count(); //again a temp value
+	max = alley.size(); //again a temp value
 	for(int i=0; i<max;i++){
 		fout<<alley.top().license <<" ";
 		street.enqueue(alley.top()); //place in street to get the next car
