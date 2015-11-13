@@ -1,0 +1,12 @@
+101 Portland 13
+102 Portland 5
+103 Boston 8
+104 Boston 2
+105 Manchester 3
+106 Portland 1
+107 Manchester 4
+108 Portsmouth 3
+109 Portsmouth 1
+110 Boston 10
+110 Manchester 5
+111 Portsmouth 3
