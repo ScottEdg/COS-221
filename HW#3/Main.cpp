@@ -22,9 +22,9 @@ int main()
 	double cost;
 	bool full;
 	Box sgb; //Snow Globe Box
-	ofstream fout;
+//	ofstream cout;
 
-	fout.open("orders.txt");
+	//cout.open("orders.txt");
 	do{ //initial read
 	cout<<"Enter number of snow globes to ship (0 to quit):  ";
 	cin>>boxes;
@@ -45,47 +45,47 @@ int main()
 
 		sgb.setDim(l,h,w); //store the valid values in the snow globe object
 		
-		fout<<"Number of snow globes:  "<<boxes<<endl;
-		fout<<"Dimensions of snow globe box (L x W x H):  "<<l<<" x "<<w<<" x "<<h<<endl;
+		cout<<"Number of snow globes:  "<<boxes<<endl;
+		cout<<"Dimensions of snow globe box (L x W x H):  "<<l<<" x "<<w<<" x "<<h<<endl;
 		
 		//code to determine how many snow globe boxes that fit in either shipping boxes
 		fit1 = (b1.getL() / sgb.getL()) * (b1.getW() / sgb.getW()) * (b1.getH() / sgb.getH());
 		fit2 = (b2.getL() / sgb.getL()) * (b2.getW() / sgb.getW()) * (b2.getH() / sgb.getH());
-		fout<<"Number that fit in Ship Box 1:  "<<fit1<<endl;
-		fout<<"Number that fit in Ship Box 2:  "<<fit2<<endl;
-		fout<<endl;
+		cout<<"Number that fit in Ship Box 1:  "<<fit1<<endl;
+		cout<<"Number that fit in Ship Box 2:  "<<fit2<<endl;
+		cout<<endl;
 		
 		if(fit1 > 0){ //print box 1's info
-			fout<<"Ship Box 1:"<<endl;
+			cout<<"Ship Box 1:"<<endl;
 			shipboxes = (boxes+fit1-1)/fit1;
-			fout<<"Number of Ship Boxes Needed: "<<shipboxes<<endl; 
+			cout<<"Number of Ship Boxes Needed: "<<shipboxes<<endl; 
 			full = boxes%fit1;
-			fout<<"Partial Box Used: "<<boolalpha<<full<<endl;
+			cout<<"Partial Box Used: "<<boolalpha<<full<<endl;
 			empty = (shipboxes * b1.getVolume()) - (boxes * sgb.getVolume());
 			if(empty != 0){ //calculate the remaining volume that needs packing material
 				cost = empty * 0.0023;
-				fout<<"Packing cost for Partial box: $"<<setprecision(2)<<fixed<<cost<<endl;
+				cout<<"Packing cost for Partial box: $"<<setprecision(2)<<fixed<<cost<<endl;
 			}
-			fout<<endl;
+			cout<<endl;
 		}
 		
 		if(fit2 > 0){ //print box 2's info
-			fout<<"Ship Box 2:"<<endl;
+			cout<<"Ship Box 2:"<<endl;
 			shipboxes = (boxes+fit2-1)/fit2;
-			fout<<"Number of Ship Boxes Needed: "<<shipboxes<<endl;
+			cout<<"Number of Ship Boxes Needed: "<<shipboxes<<endl;
 			full = boxes%fit2;
-			fout<<"Partial Box Used: "<<boolalpha<<full<<endl;
+			cout<<"Partial Box Used: "<<boolalpha<<full<<endl;
 			empty = (shipboxes * b2.getVolume()) - (boxes * sgb.getVolume());
 			if(empty != 0){ //calculate the remaining volume that needs packing material
 				cost = empty * 0.0023;
-				fout<<"Packing cost for Partial box: $"<<setprecision(2)<<fixed<<cost<<endl;
+				cout<<"Packing cost for Partial box: $"<<setprecision(2)<<fixed<<cost<<endl;
 			}
 		}
 		if(fit1 == 0 && fit2 == 0){ //both Box 1 and Box 2 won't work
-			fout<<"No shipping box is available!"<<endl;
+			cout<<"No shipping box is available!"<<endl;
 		}
 
-		fout<<string(75,'-')<<endl<<endl; //print '-' to show the end of the order
+		cout<<string(75,'-')<<endl<<endl; //print '-' to show the end of the order
 
 	do{ //get the next order
 	cout<<"Enter number of snow globes to ship (0 to quit):  ";
@@ -96,6 +96,6 @@ int main()
 	}while(boxes<0);
 	
 	}
-	fout.close();
+	//cout.close();
 	return 0;
 }
