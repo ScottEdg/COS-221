@@ -1,7 +1,6 @@
 /*
 Scott Edgerly
 Assg #9
-This code uses lists to send out trucks with orders to the correct destination.
 */
 
 //This File: Main.cpp
@@ -24,5 +23,11 @@ int main()
 		fin >> word;
 	}
 	fin.close();
+	for (int i = 0; i < Table.getSize(); i++) {
+		if (Table.clusterLength(i) > 1) {
+			cout << "index " << i << "  " << Table.clusterLength(i) << endl;
+		}
+	}
+	cout << Table.getSize();
 	return 0;
 }
