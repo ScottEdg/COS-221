@@ -94,6 +94,5 @@ int main()
 	}while(boxes<0);
 	
 	}
-	//cout.close();
 	return 0;
 }
