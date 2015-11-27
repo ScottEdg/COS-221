@@ -16,15 +16,13 @@ using namespace std;
 int main()
 {
 	int l,w,h,boxes,temp;
-	Box b1(16,12,4); //initalize Box 1
-	Box b2(24,16,8); //intialize Box 2
+	Box b1(16,12,4); //initialize Box 1
+	Box b2(24,16,8); //initialize Box 2
 	int shipboxes,fit1, fit2, empty;
 	double cost;
 	bool full;
 	Box sgb; //Snow Globe Box
-//	ofstream cout;
 
-	//cout.open("orders.txt");
 	do{ //initial read
 	cout<<"Enter number of snow globes to ship (0 to quit):  ";
 	cin>>boxes;
